@@ -1,10 +1,12 @@
 import FechaNacimiento from "./fecha-nacimiento.js";
 import Nombre from "./nombre.js";
+import Persona from "./persona.js";
 
 class Main {
     constructor() {
         this.fecha = new FechaNacimiento(3, 3, 2005)
         this.nombre = new Nombre("Ivan", "Escritura", "Lectura & Escritura")
+        this.persona = new Persona("Masculino", new FechaNacimiento(21, 12, 2000), new Nombre("Jesus", "Ivan","Godinez"))
     }
 
     testFechaNacimiento() {
@@ -33,10 +35,13 @@ class Main {
         //Escribir y leer el Apellido Materno (Martinez en consola)
         this.nombre.setApeMat("Martinez");
         console.log(this.nombre.getApeMat());
-
+    }
+    testPersona() {
+        console.log(this.persona.getPerfil());
     }
 }
 
 let app = new Main();
 app.testFechaNacimiento();
 app.testNombre();
+app.testPersona();
