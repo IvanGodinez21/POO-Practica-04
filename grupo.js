@@ -5,7 +5,21 @@ export default class Grupo {
         this._estudiantes = new Array();
     }
     registrar(estudiante) {
-    this._estudiantes.push(estudiante);
+        if (this._encontrarEstudiante(estudiante) != null) {
+            return false;
+        }
+        this._estudiantes.push(estudiante);
+        return true;
+    }
+    _encontrarEstudiante(estudiante) {
+        let resultado = null;
+
+        this._estudiantes.forEach(e => {
+            if (e === estudiante) {
+                resultado = e;
+            } 
+        });
+        return resultado;
     }
     listarEstudiantes() {
         this._estudiantes.forEach((estudiante, i) => {

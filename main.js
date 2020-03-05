@@ -79,12 +79,37 @@ class Main {
             "juan@ucol.mx",
             "Telematica"
         );
+        let estudiante2 = new Estudiante(
+            new Nombre("Juan", "Alcachofa", "Ramirez"),
+            new FechaNacimiento(17,8,2000),
+            "Masculino",
+            20166790,
+            "juanAlca@ucol.mx",
+            "Telematica"
+        );
+        let estudiante3 = new Estudiante(
+            new Nombre("Juan", "Alcachofa", "Ramirez"),
+            new FechaNacimiento(17,8,2000),
+            "Masculino",
+            20166790,
+            "juanAlca@ucol.mx",
+            "Telematica"
+        );
         let grupo = new Grupo(1,"G");
+        console.log(grupo.registrar(estudiante1));
+        console.log(grupo.registrar(estudiante1));
+        console.log(grupo.registrar(estudiante2));
+        console.log(grupo.registrar(estudiante3));
+
+        grupo.registrar(estudiante1);
         grupo.registrar(estudiante1);
         grupo.registrar(estudiante1);
         grupo.registrar(estudiante1);
 
         grupo.listarEstudiantes();
+
+        console.log(grupo._encontrarEstudiante(estudiante1))
+        console.log(grupo._encontrarEstudiante(estudiante2))
     }
 }
 
