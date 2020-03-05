@@ -10,7 +10,7 @@ export default class Nombre {
         this._apeMat = apeMat
     }
     getNombre() {
-        return `${this._nombres}` 
+        return `${this._nombres.toUpperCase()}`
     }
     setApePat(apePat) {
         this._apePat = apePat;
@@ -19,7 +19,7 @@ export default class Nombre {
         this._apeMat = apeMat;
     }
     getApeMat() {
-        return `${this._apeMat}`
+        return `${this._apeMat.toUpperCase()}`
     }
     getNombreCompleto() {
         return `${this._nombres} ${this._apePat} ${this._apeMat}`

@@ -1,6 +1,9 @@
 import FechaNacimiento from "./fecha-nacimiento.js";
 import Nombre from "./nombre.js";
 import Persona from "./persona.js";
+import Estudiante from "./estudiante.js"
+import Maestro from "./maestro.js";
+import Grupo from "./grupo.js";
 
 class Main {
     constructor() {
@@ -10,6 +13,7 @@ class Main {
     }
 
     testFechaNacimiento() {
+        console.log("-----testFechaNacimiento-----")
         //lectura del atributo Fecha
         console.log(this.fecha.getFecha());
 
@@ -25,6 +29,7 @@ class Main {
         console.log(this.fecha.getEdad());
     } 
     testNombre() {
+        console.log("-----testPersona-----")
         //Solo leer el nombre del constructor (Ivan en consola)
         console.log(this.nombre.getNombre());
 
@@ -37,7 +42,49 @@ class Main {
         console.log(this.nombre.getApeMat());
     }
     testPersona() {
+        console.log("-----testPersona-----")
         console.log(this.persona.getPerfil());
+    }
+    testEstudiante() {
+        console.log("-----testEstudiante-----")
+        let estudiante = new Estudiante(
+            new Nombre("Ivan" , "Godinez", "Martinez"),
+            new FechaNacimiento(21,12,2000),
+            "Masculino",
+            20166796,
+            "jgodinez0@ucol.mx",
+            "Facultad de Telematica"
+            );
+        estudiante.print()
+    }
+    testMaestro() {
+        console.log("-----testMaestro-----")
+        let maestro = new Maestro(
+            new Nombre("Carlos", "Flores", "Cortes"),
+            new FechaNacimiento(11,11,1970),
+            "Masculino",
+            1000,
+            "201610",
+            "Programación"
+            );
+        maestro.print()
+    }
+    testGrupo() {
+        console.log("-----testGrupo-----")
+        let estudiante1 = new Estudiante(
+            new Nombre("Juan", "Perez", "Rodriguez"),
+            new FechaNacimiento(15,3,2000),
+            "Masculino",
+            20166792,
+            "juan@ucol.mx",
+            "Telematica"
+        );
+        let grupo = new Grupo(1,"G");
+        grupo.registrar(estudiante1);
+        grupo.registrar(estudiante1);
+        grupo.registrar(estudiante1);
+
+        grupo.listarEstudiantes();
     }
 }
 
@@ -45,3 +92,6 @@ let app = new Main();
 app.testFechaNacimiento();
 app.testNombre();
 app.testPersona();
+app.testEstudiante();
+app.testMaestro();
+app.testGrupo();
