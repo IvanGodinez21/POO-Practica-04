@@ -71,14 +71,15 @@ class Main {
     }
     testGrupo() {
         console.log("-----testGrupo-----")
-        let estudiante1 = new Estudiante(
-            new Nombre("Juan", "Perez", "Rodriguez"),
-            new FechaNacimiento(15,3,2000),
-            "Masculino",
-            20166792,
-            "juan@ucol.mx",
-            "Telematica"
-        );
+        let datosEstudiante = {
+            nombre: new Nombre("Juan", "Perez", "Rodriguez"),
+            FechaNacimiento: new FechaNacimiento(15,3,2000),
+            genero: "Masculino",
+            numeroCuenta: 20166792,
+            correo: "juan@ucol.mx",
+            escuela: "Telematica"
+        };
+        let estudiante1 = new Estudiante(datosEstudiante);
         let estudiante2 = new Estudiante(
             new Nombre("Juan", "Alcachofa", "Ramirez"),
             new FechaNacimiento(17,8,2000),
@@ -92,6 +93,14 @@ class Main {
             new FechaNacimiento(17,8,2000),
             "Masculino",
             20166790,
+            "juanAlca@ucol.mx",
+            "Telematica"
+        );
+        let estudiante4 = new Estudiante(
+            new Nombre("Juan", "Alcachofa", "Ramirez"),
+            new FechaNacimiento(17,8,2000),
+            "Masculino",
+            20165790,
             "juanAlca@ucol.mx",
             "Telematica"
         );
@@ -109,7 +118,22 @@ class Main {
         grupo.listarEstudiantes();
 
         console.log(grupo._encontrarEstudiante(estudiante1))
-        console.log(grupo._encontrarEstudiante(estudiante2))
+        console.log(grupo._encontrarEstudiante(estudiante3))
+        console.log(grupo._encontrarEstudianteV2(estudiante2))
+        console.log(grupo._encontrarEstudiante(estudiante4))
+
+        console.log(grupo._encontrarIndiceEstudiante(estudiante1))
+        console.log(grupo._encontrarIndiceEstudiante(estudiante2))
+
+        console.log(grupo.eliminar(estudiante1));
+        console.log(grupo.eliminar(estudiante2));
+        
+        grupo.listarEstudiantes();
+
+        console.log(grupo.actualizar(estudiante1, estudiante2));
+
+
+        grupo.listarEstudiantes();
     }
 }
 
